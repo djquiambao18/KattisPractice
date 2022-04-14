@@ -7,7 +7,9 @@ class Aaah{
         str[0] = input.nextLine(); //what the guy can do that day
         str[1] = input.nextLine(); //what the dr. needs
         input.close();
-        if(str[0].length() >= str[1].length() && str[0].charAt(str[0].length()-1) == 'h' && str[1].charAt(str[1].length()-1) == 'h' 
+        if(str[0].length() == 1 && str[0].charAt(0) == 'h' && str[1].length() == 1 && str[1].charAt(0) == 'h')
+            System.out.println("go");
+        else if(str[0].length() >= str[1].length() && str[0].charAt(str[0].length()-1) == 'h' && str[1].charAt(str[1].length()-1) == 'h' 
             && str[0].charAt(0) == 'a' && str[1].charAt(0) == 'a' && str[0].length() > 0 && str[1].length() > 0){
             char [] ch1 = str[0].toCharArray();
             char [] ch2 = str[1].toCharArray();
@@ -28,7 +30,7 @@ class Aaah{
                 }
                 j++;
             }
-            if(i >= j){
+            if(i >= j && i >= 0 && i <= 1000 && j >= 0 && j <= 1000){
                 System.out.println("go");
             }
             else{
