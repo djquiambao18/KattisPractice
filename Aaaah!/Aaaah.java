@@ -12,27 +12,23 @@ class Aaah{
             char [] ch1 = str[0].toCharArray();
             char [] ch2 = str[1].toCharArray();
             int i = 0;
-            HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-            while(i < ch1.length && ch1[i] == 'a'){
-                if(map.containsKey(ch1[i])){
-                    map.put(ch1[i], map.get(ch1[i])+1);
-                }
-                else{
-                    map.put(ch1[i], 1);
+            int j = 0;
+            while(i < ch1.length){
+                if(ch1[i] != 'a' && i < ch1.length-1){
+                    System.out.println("no");
+                    return;
                 }
                 i++;
             }
-            int count = 0;
-            i = 0;
-            if(ch2[ch2.length-1] != 'h'){
-                System.out.println("no");
-                return;
+            // need second while loop for input validation
+            while(j < ch2.length){
+                if(ch2[j] != 'a' && j < ch2.length-1){
+                    System.out.println("no");
+                    return;
+                }
+                j++;
             }
-            while(i < ch2.length && ch2[i] == 'a'){
-                count++;
-                i++;
-            }
-            if(count <= map.get('a')){
+            if(i >= j){
                 System.out.println("go");
             }
             else{
